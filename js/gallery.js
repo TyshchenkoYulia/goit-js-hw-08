@@ -111,18 +111,19 @@ function onImageClick(event) {
     </div>
 `);
 
-document.addEventListener('keypress', (event) => {
-    if (event.code === 'Escape') {
-        instance.close();
-    }
-    console.log(event);
-    
-});
+
 
 instance.show();   
 }
    
-
+document.addEventListener('keypress', (event) => {
+    if (event.code !== 'Escape') {
+       return;
+    }
+    instance.close();
+    console.log(event);
+    
+});
 
 
 

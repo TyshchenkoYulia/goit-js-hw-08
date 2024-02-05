@@ -98,7 +98,8 @@ function onImageClick(event) {
     const card = event.target.closest('.gallery-image');
     const cardDataset = card.dataset.source;
 
-    const {original} = images.find((images) => images.original === cardDataset);
+    const {original} = images.find((images) => 
+                    images.original === cardDataset);
 
 
     instance = basicLightbox.create(`

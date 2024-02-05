@@ -123,6 +123,6 @@ function onImageClose(event) {
     console.log(event);
 }
 
-document.addEventListener('keypress', onImageClose);
-document.removeEventListener('keypress', onImageClose); 
+document.addEventListener('keydown', onImageClose);
+// document.removeEventListener('keydown', onImageClose); 
 

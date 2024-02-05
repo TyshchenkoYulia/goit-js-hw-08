@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const images = [
      {
@@ -91,7 +91,6 @@ gallery.addEventListener('click', onImageClick);
 function onImageClick(event) {
     event.preventDefault();
 
-
     if(event.target === event.currentTarget) {
             return;
         }
@@ -103,28 +102,27 @@ function onImageClick(event) {
 
 
     instance = basicLightbox.create(`
-    <div class="modal">
-        <img 
-            src="${cardDataset}" 
-            width="1112" 
-            height="640">
-    </div>
-`);
+        <div class="modal">
+            <img 
+                src="${cardDataset}" 
+                width="1112" 
+                height="640">
+        </div>
+    `);
 
-
-
-instance.show();   
+instance.show();    
 }
+
+function onImageClose(event) {
    
-document.addEventListener('keypress', (event) => {
-    if (event.code !== 'Escape') {
+    if (event.code !== "Escape") {
        return;
-    }
+    } 
     instance.close();
+
     console.log(event);
-    
-});
+}
 
+document.addEventListener('keypress', onImageClose);
+document.removeEventListener('keypress', onImageClose); 
 
-
-   
